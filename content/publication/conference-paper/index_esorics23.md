@@ -48,7 +48,7 @@ tags: []
 # - name: Custom Link
 #   url: http://example.org
 
-#url_pdf: ''
+url_pdf: 'https://eprint.iacr.org/2023/1712'
 #url_code: 'https://github.com/wowchemy/wowchemy-hugo-themes'
 #url_dataset: 'https://github.com/wowchemy/wowchemy-hugo-themes'
 #url_poster: ''
