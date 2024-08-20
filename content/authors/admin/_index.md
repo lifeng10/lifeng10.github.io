@@ -17,12 +17,12 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Ph.D. Candidate
+role: Research Fellow
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Xidian University
-    url: https://www.xidian.edu.cn
+  - name: Singapore Management University
+    url: https://www.smu.edu.sg/
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include Searchable Symmetric Encryption and Oblivious RAM.
@@ -37,7 +37,7 @@ education:
   courses:
     - course: Ph.D. in Cyberspace Security
       institution: Xidian University
-      year: 2018-present
+      year: 2018-2024
     - course: Visiting Ph.D. in Cyberspace Security
       institution: National University of Singapore
       year: 2022-2023
@@ -119,5 +119,5 @@ social:
 highlight_name: true
 ---
 
-Feng Li (李锋) is currently a Ph.D. candidate at the School of Cyber Engineering, Xidian University, under the guidance of Professor [Jianfeng Ma](https://web.xidian.edu.cn/jfma/). In 2022-2023, he was a visiting Ph.D. student at the National University of Singapore under the Professor [Ee-Chien Chang](https://www.comp.nus.edu.sg/~changec/). His research interests include Searchable Symmetric Encryption and Oblivious RAM. He is on track to complete his Ph.D. program in September 2024 and is actively seeking a postdoctoral position. 
+Feng Li (李锋) is currently a Research Fellow at the School of Computing and Information Systems, Singapore Management University, under the guidance of Professor [Robert H. Deng](http://www.mysmu.edu/faculty/robertdeng/). Prior to that, he graduated from Xidian University with a Ph.D. under the supervision of [Jianfeng Ma](https://web.xidian.edu.cn/jfma/). In 2022-2023, he was a visiting Ph.D. student at the National University of Singapore under the Professor [Ee-Chien Chang](https://www.comp.nus.edu.sg/~changec/). His research interests include Searchable Symmetric Encryption and Oblivious RAM. 
 {style="text-align: justify;"}
