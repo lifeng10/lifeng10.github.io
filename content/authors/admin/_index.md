@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Research Fellow
+role: Research Scientist
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -119,5 +119,5 @@ social:
 highlight_name: true
 ---
 
-Feng Li (李锋) is currently a Research Fellow at the School of Computing and Information Systems, Singapore Management University, under the guidance of Professor [Robert H. Deng](http://www.mysmu.edu/faculty/robertdeng/). Prior to that, he graduated from Xidian University with a Ph.D. under the supervision of [Jianfeng Ma](https://web.xidian.edu.cn/jfma/). In 2022-2023, he was a visiting Ph.D. student at the National University of Singapore under the Professor [Ee-Chien Chang](https://www.comp.nus.edu.sg/~changec/). His research interests include Searchable Symmetric Encryption and Oblivious RAM. 
+Feng Li (李锋) is currently a Research Scientist at the School of Computing and Information Systems, Singapore Management University, working with Professor [Robert H. Deng](http://www.mysmu.edu/faculty/robertdeng/). Prior to that, he graduated from Xidian University with a Ph.D. under the supervision of [Jianfeng Ma](https://web.xidian.edu.cn/jfma/). In 2022-2023, he was a visiting Ph.D. student at the National University of Singapore under the Professor [Ee-Chien Chang](https://www.comp.nus.edu.sg/~changec/). His research interests include Searchable Symmetric Encryption and Oblivious RAM. 
 {style="text-align: justify;"}
