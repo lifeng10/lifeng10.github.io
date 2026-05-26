@@ -72,6 +72,10 @@ jobs:
             File.write("site/_config.yml", deep_merge(base, override).to_yaml)
           '
 
+      - name: Patch theme
+        run: |
+          sed -i 's/ctrl k <i/\<i/g' site/_includes/header.liquid
+
       - name: Build site
         run: |
           cd site
