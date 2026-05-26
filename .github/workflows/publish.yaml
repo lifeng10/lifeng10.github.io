@@ -43,7 +43,14 @@ jobs:
           cp -R _projects site/_projects
           if [ -f content/authors/admin/avatar.jpeg ]; then cp content/authors/admin/avatar.jpeg site/assets/img/prof_pic.jpeg; fi
           if [ -f static/uploads/resume.pdf ]; then cp static/uploads/resume.pdf site/assets/pdf/resume.pdf; fi
-          ruby -ryaml -e '
+          ruby -ryaml -rdate -e '
+            def load_yaml(path)
+              if YAML.respond_to?(:unsafe_load_file)
+                YAML.unsafe_load_file(path)
+              else
+                YAML.load_file(path)
+              end
+            end
             def deep_merge(base, override)
               override.each do |key, value|
                 if base[key].is_a?(Hash) && value.is_a?(Hash)
@@ -54,8 +61,8 @@ jobs:
               end
               base
             end
-            base = YAML.load_file("site/_config.yml")
-            override = YAML.load_file("_config.yml")
+            base = load_yaml("site/_config.yml")
+            override = load_yaml("_config.yml")
             File.write("site/_config.yml", deep_merge(base, override).to_yaml)
           '
 
