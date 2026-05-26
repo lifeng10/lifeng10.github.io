@@ -7,18 +7,25 @@ nav: true
 nav_order: 4
 ---
 
+A PDF CV from the previous homepage is available here: [Download CV](/assets/pdf/resume.pdf).
+
+## Position
+
+Research Scientist, School of Computing and Information Systems, Singapore Management University.
+
 ## Education
 
-Add your education history here.
+- Ph.D. in Cyberspace Security, Xidian University, 2018-2024
+- Visiting Ph.D. in Cyberspace Security, National University of Singapore, 2022-2023
+- B.Sc. in Information Security, Hangzhou Dianzi University, 2014-2018
 
-## Research Experience
+## Research Interests
 
-Add your research experience here.
+- Searchable Symmetric Encryption
+- Oblivious RAM
 
-## Awards
+## Advisors and Collaborators
 
-Add selected awards and honors here.
-
-## Service
-
-Add academic service, reviewing, and teaching here.
+- Professor Robert H. Deng, Singapore Management University
+- Professor Jianfeng Ma, Xidian University
+- Professor Ee-Chien Chang, National University of Singapore
