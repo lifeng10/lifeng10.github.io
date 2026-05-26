@@ -1,15 +1,7 @@
-# IDEs
-.idea/
-
-# Hugo
-resources/
-public/
-jsconfig.json
-node_modules/
-go.sum
-.hugo_build.lock
-
-# MacOS
-./DS_Store
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
 .DS_Store
-data/.DS_Store
