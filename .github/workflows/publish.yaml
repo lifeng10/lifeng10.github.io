@@ -27,6 +27,12 @@ jobs:
           ruby-version: "3.2.2"
           bundler-cache: false
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          python3 -m pip install --user --upgrade jupyter
+
       - name: Download al-folio
         run: |
           curl -L https://codeload.github.com/alshedivat/al-folio/zip/refs/heads/master -o al-folio.zip
