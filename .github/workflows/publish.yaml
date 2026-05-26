@@ -1,16 +1,10 @@
-name: Deploy Wowchemy website to GitHub Pages
-
-env:
-  WC_HUGO_VERSION: '0.119.0'
+name: Deploy al-folio website to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
   push:
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Provide permission to clone the repo and deploy it to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -21,44 +15,61 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build website
   build:
-    if: github.repository_owner != 'wowchemy'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          # Fetch history for Hugo's .GitInfo and .Lastmod
-          fetch-depth: 0
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: ${{ env.WC_HUGO_VERSION }}
-          extended: true
-      - uses: actions/cache@v4
-        with:
-          path: /tmp/hugo_cache_runner/
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.mod') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
+          ruby-version: "3.2.2"
+          bundler-cache: false
+
+      - name: Download al-folio
         run: |
-          echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          curl -L https://codeload.github.com/alshedivat/al-folio/zip/refs/heads/master -o al-folio.zip
+          unzip -q al-folio.zip
+          mv al-folio-master site
+
+      - name: Apply site content
+        run: |
+          rm -rf site/_pages site/_bibliography site/_news site/_projects site/_posts
+          mkdir -p site/_posts
+          cp -R _pages site/_pages
+          cp -R _bibliography site/_bibliography
+          cp -R _news site/_news
+          cp -R _projects site/_projects
+          ruby -ryaml -e '
+            def deep_merge(base, override)
+              override.each do |key, value|
+                if base[key].is_a?(Hash) && value.is_a?(Hash)
+                  deep_merge(base[key], value)
+                else
+                  base[key] = value
+                end
+              end
+              base
+            end
+            base = YAML.load_file("site/_config.yml")
+            override = YAML.load_file("_config.yml")
+            File.write("site/_config.yml", deep_merge(base, override).to_yaml)
+          '
+
+      - name: Build site
+        run: |
+          cd site
+          bundle install
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --destination ../_site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./_site
 
-  # Deploy website to GitHub Pages hosting
   deploy:
-    if: github.repository_owner != 'wowchemy'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
