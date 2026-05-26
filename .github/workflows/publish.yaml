@@ -36,11 +36,13 @@ jobs:
       - name: Apply site content
         run: |
           rm -rf site/_pages site/_bibliography site/_news site/_projects site/_posts
-          mkdir -p site/_posts
+          mkdir -p site/_posts site/assets/img site/assets/pdf
           cp -R _pages site/_pages
           cp -R _bibliography site/_bibliography
           cp -R _news site/_news
           cp -R _projects site/_projects
+          if [ -f content/authors/admin/avatar.jpeg ]; then cp content/authors/admin/avatar.jpeg site/assets/img/prof_pic.jpeg; fi
+          if [ -f static/uploads/resume.pdf ]; then cp static/uploads/resume.pdf site/assets/pdf/resume.pdf; fi
           ruby -ryaml -e '
             def deep_merge(base, override)
               override.each do |key, value|
