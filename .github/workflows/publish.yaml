@@ -47,8 +47,8 @@ jobs:
           cp -R _bibliography site/_bibliography
           cp -R _news site/_news
           cp -R _projects site/_projects
-          if [ -f content/authors/admin/avatar.jpeg ]; then cp content/authors/admin/avatar.jpeg site/assets/img/prof_pic.jpeg; fi
-          if [ -f static/uploads/resume.pdf ]; then cp static/uploads/resume.pdf site/assets/pdf/resume.pdf; fi
+          if [ -f assets/img/prof_pic.jpeg ]; then cp assets/img/prof_pic.jpeg site/assets/img/prof_pic.jpeg; fi
+          if [ -f assets/pdf/resume.pdf ]; then cp assets/pdf/resume.pdf site/assets/pdf/resume.pdf; fi
           ruby -ryaml -rdate -e '
             def load_yaml(path)
               if YAML.respond_to?(:unsafe_load_file)
