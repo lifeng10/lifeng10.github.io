@@ -1,0 +1,61 @@
+title: Lifeng
+first_name: Li
+middle_name:
+last_name: Feng
+email:
+description: >
+  Personal academic homepage of Li Feng.
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+keywords: academic website, research, publications, lifeng10
+lang: en
+icon: 🎓
+
+url: https://lifeng10.github.io
+baseurl: ""
+last_updated: false
+
+navbar_fixed: true
+footer_fixed: true
+search_enabled: true
+socials_in_search: true
+bib_search: true
+
+github_username: lifeng10
+scholar_userid:
+orcid_id:
+linkedin_username:
+research_gate_profile:
+semanticscholar_id:
+
+contact_note: >
+  Please update this note with your preferred contact information.
+
+blog_name: notes
+blog_description: research notes and updates
+
+announcements:
+  enabled: true
+  scrollable: true
+  limit: 5
+
+latest_posts:
+  enabled: false
+
+scholar:
+  last_name: [Feng]
+  first_name: [Li, L.]
+  style: apa
+  locale: en
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  bibtex_filters: [latex, smallcaps, superscript]
+  replace_strings: true
+  join_strings: true
+  details_dir: bibliography
+  details_link: Details
+  query: "@*"
+  group_by: year
+  group_order: descending
