@@ -75,6 +75,24 @@ jobs:
       - name: Patch theme
         run: |
           sed -i 's/ctrl k <i/\<i/g' site/_includes/header.liquid
+          python3 - << 'PYEOF'
+import re
+with open('site/_layouts/bib.liquid', 'r') as f:
+    content = f.read()
+old = '        {%- if author_is_self -%}\n          <em>\n            {{- author.first }}\n            {{ author_last_html -}}\n          </em>'
+new = '        {%- if author_is_self -%}\n          <em><strong>{{- author.first }} {{ author_last_html -}}</strong></em>{%- if entry.corresponding == "true" %} <sup title="Corresponding Author" style="color:#b03a2e;"><i class="fas fa-envelope"></i></sup>{%- endif %}'
+result = content.replace(old, new)
+if result == content:
+    print('WARNING: pattern not found in bib.liquid, trying regex fallback')
+    result = re.sub(
+        r'(\{%-\s*if author_is_self\s*-%\}\s*)<em>(.*?)</em>',
+        r'\1<em><strong>\2</strong></em>{%- if entry.corresponding == "true" %} <sup title="Corresponding Author" style="color:#b03a2e;"><i class="fas fa-envelope"></i></sup>{%- endif %}',
+        result, flags=re.DOTALL
+    )
+with open('site/_layouts/bib.liquid', 'w') as f:
+    f.write(result)
+print('bib.liquid patched successfully')
+PYEOF
 
       - name: Build site
         run: |
