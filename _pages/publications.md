@@ -8,7 +8,7 @@ nav_order: 2
 ---
 
 <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
-  <sup>†</sup> Corresponding author
+  <sup style="color:#b03a2e;"><i class="fas fa-envelope"></i></sup> Corresponding author
 </p>
 
 <div class="publications">
