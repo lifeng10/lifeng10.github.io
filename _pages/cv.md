@@ -4,7 +4,7 @@ title: cv
 permalink: /cv/
 description: Curriculum vitae.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 A PDF CV from the previous homepage is available here: [Download CV](/assets/pdf/resume.pdf).
