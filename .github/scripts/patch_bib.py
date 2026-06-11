@@ -32,6 +32,41 @@ if result == content:
         result, flags=re.DOTALL
     )
 
+# Color venue badges by publication type when venue metadata is absent.
+# Journals (article) -> green, conferences (inproceedings/incollection) -> blue.
+abbr_old = (
+    '        {% else %}\n'
+    '          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>\n'
+    '        {% endif %}'
+)
+abbr_new = (
+    '        {% else %}\n'
+    '          {% if entry.type == \'article\' %}\n'
+    '            <abbr class="badge rounded w-100" style="background-color:#1b8a5a;">{{ entry.abbr }}</abbr>\n'
+    '          {% elsif entry.type == \'inproceedings\' or entry.type == \'incollection\' %}\n'
+    '            <abbr class="badge rounded w-100" style="background-color:#1f5fbf;">{{ entry.abbr }}</abbr>\n'
+    '          {% else %}\n'
+    '            <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>\n'
+    '          {% endif %}\n'
+    '        {% endif %}'
+)
+
+result2 = result.replace(abbr_old, abbr_new)
+if result2 == result:
+    print('WARNING: abbr exact pattern not found, trying regex fallback')
+    result2 = re.sub(
+        r'(\{\%\s*else\s*\%\}\s*)<abbr class="badge rounded w-100">\{\{\s*entry\.abbr\s*\}\}</abbr>(\s*\{\%\s*endif\s*\%\})',
+        r'\1{% if entry.type == \'article\' %}\n'
+        r'            <abbr class="badge rounded w-100" style="background-color:#1b8a5a;">{{ entry.abbr }}</abbr>\n'
+        r'          {% elsif entry.type == \'inproceedings\' or entry.type == \'incollection\' %}\n'
+        r'            <abbr class="badge rounded w-100" style="background-color:#1f5fbf;">{{ entry.abbr }}</abbr>\n'
+        r'          {% else %}\n'
+        r'            <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>\n'
+        r'          {% endif %}\2',
+        result2,
+        flags=re.DOTALL,
+    )
+
 with open('site/_layouts/bib.liquid', 'w') as f:
-    f.write(result)
+    f.write(result2)
 print('bib.liquid patched successfully')

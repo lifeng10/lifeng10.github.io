@@ -2,34 +2,43 @@
 layout: about
 title: about
 permalink: /
-subtitle: Research Scientist, Singapore Management University
+subtitle: ""
 
 profile:
   align: right
   image: prof_pic.jpeg
   image_circular: false
   more_info: >
-    <p>School of Computing and Information Systems</p>
-    <p>Singapore Management University</p>
-    <p><a href="mailto:lifengvbg@gmail.com">lifengvbg@gmail.com</a></p>
-    <p><a href="/assets/pdf/resume.pdf">CV</a></p>
+    <p style="display:block; white-space:nowrap; font-size:0.85rem; margin:2px 0;">Research Fellow</p>
+    <p style="display:block; white-space:nowrap; font-size:0.85rem; margin:2px 0;">College of Computing and Data Science</p>
+    <p style="display:block; white-space:nowrap; font-size:0.85rem; margin:2px 0;">Nanyang Technological University</p>
+    <p style="display:block; white-space:nowrap; font-size:0.85rem; margin:2px 0;">Email: lifengvbg@gmail.com</p>
+    <p style="display:block; margin-top:0.8rem; font-size:1.2rem; letter-spacing:0.3rem;">
+      <a href="mailto:lifengvbg@gmail.com" title="email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://scholar.google.com/citations?user=cKntKcAAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+      <a href="https://github.com/lifeng10" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    </p>
 
 news: true
 selected_papers: true
-social: true
+social: false
 ---
 
-Feng Li (李锋) is currently a Research Scientist at the School of Computing and Information Systems, Singapore Management University, working with Professor [Robert H. Deng](http://www.mysmu.edu/faculty/robertdeng/). Prior to that, he graduated from Xidian University with a Ph.D. under the supervision of [Jianfeng Ma](https://web.xidian.edu.cn/jfma/). In 2022-2023, he was a visiting Ph.D. student at the National University of Singapore under Professor [Ee-Chien Chang](https://www.comp.nus.edu.sg/~changec/).
+I am currently a Research Fellow at College of Computing and Data Science, Nanyang Technological University (NTU), Singapore, working under the supervision of [Prof. Tianwei Zhang](https://personal.ntu.edu.sg/tianwei.zhang/).
+My research interests primarily lie in the field of applied cryptography, with a specific focus on searchable encryption and Oblivious RAM. I am dedicated to designing efficient and secure privacy-preserving protocols for storage and computation.
 
-His research interests include **Searchable Symmetric Encryption** and **Oblivious RAM**.
 
-## Interests
+<!-- ## Interests
 
 - Searchable Symmetric Encryption
-- Oblivious RAM
+- Oblivious RAM -->
 
 ## Education
 
-- Ph.D. in Cyberspace Security, Xidian University, 2018-2024
-- Visiting Ph.D. in Cyberspace Security, National University of Singapore, 2022-2023
-- B.Sc. in Information Security, Hangzhou Dianzi University, 2014-2018
+- 2018 - 2024, Ph.D. at School of Cyber Engineering, Xidian University (supervised by [Prof. Jianfeng Ma](https://web.xidian.edu.cn/jfma/))
+<!-- - 2022 - 2023, Visiting Student at School of Computing, National University of Singapore -->
+- 2014 - 2018, Bachelor at School of Cyber Space Security, Hangzhou Dianzi University
+
+## Work Experience
+- 2026 - present, Research Fellow at College of Computing and Data Science, Nanyang Technological University, Singapore (hosted by [Prof. Tianwei Zhang](https://personal.ntu.edu.sg/tianwei.zhang/))
+- 2024 - 2026, Research Scientist at School of Computing & Information Systems, Singapore Management University, Singapore (hosted by [Prof. Robert H. Deng](http://www.mysmu.edu/faculty/robertdeng/))
